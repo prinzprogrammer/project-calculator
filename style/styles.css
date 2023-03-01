@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #313131;
+}
+.calc .display-holder {
+  box-sizing: border-box;
+  width: 500px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.calc .display-holder #screen {
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 5px;
+  box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.2);
+  padding: 1.8rem;
+  box-sizing: border-box;
+  text-align: end;
+  align-items: center;
+}
+.calc .row {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 5px;
+  box-sizing: border-box;
+}
+.calc .row button {
+  font-size: 1.5rem;
+  height: 4rem;
+  background-color: rgb(231, 231, 231);
+  border: none;
+  border-radius: 3%;
+  cursor: pointer;
+}
+.calc .row .operator {
+  background-color: rgb(255, 166, 0);
+}
+.calc .row .operator:hover {
+  background-color: rgb(255, 195, 84);
+}
+.calc .row .operator:active {
+  background-color: rgb(255, 166, 0);
+}
+.calc .row .num {
+  background-color: #505050;
+  color: white;
+}
+.calc .row .num:hover {
+  background-color: #929292;
+}
+.calc .row .num:active {
+  background-color: #505050;
+}
+.calc .row #equal,
+.calc .row #clear {
+  background-color: #d4d4d2;
+}
+.calc .row #equal:hover {
+  background-color: rgb(248, 248, 248);
+}
+.calc .row #equal:active {
+  background-color: #d4d4d2;
+}
+.calc .row #clear:hover {
+  background-color: rgb(248, 248, 248);
+}
+.calc .row #clear:active {
+  background-color: #d4d4d2;
+}/*# sourceMappingURL=styles.css.map */
