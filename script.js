@@ -45,6 +45,7 @@ clearBtn.addEventListener("click", clear);
 let num1 = 0;
 let num2 = 0;
 let operator;
+let result = 0;
 
 function populateDisplay() {
   //Create the functions that populate the display when you click the number buttons.
@@ -55,29 +56,27 @@ function populateDisplay() {
   }
   let secondInput = 0;
   for (let index = 0; index < operatorList.length; index++) {
-    //You’ll need to store the first number that is input into the calculator when a user presses an operator
     operatorList[index].addEventListener("click", function () {
-      num1 = Number(input.innerHTML);
-      console.log("num1:", num1);
+      num1 = Number(input.innerHTML); //store the first number that is input into the calculator when a user presses an operator
+      console.log("num 1:", num1);
       operator = operatorList[index].value;
-      console.log("operator:", operator);
       input.innerHTML += ` ${operator} `;
+      secondInput = 0;
       for (let index = 0; index < numList.length; index++) {
         numList[index].addEventListener("click", function () {
-          secondInput += numList[index].value;
+          secondInput += numList[index].value; //store input.innerHTML into another variable and store numList[index].value
         });
       }
     });
   }
-  //Store second number after pressing equals button
-  //store input.innerHTML into another variable and clear it or..
-  //Store it into a variable
   equalBtn.addEventListener("click", function () {
-    num2 = Number(secondInput);
-    console.log("secondInput:", secondInput);
-    console.log("num2:", num2);
-    operate(operator, num1, num2);
-    console.log("result:", operate(operator, num1, num2));
+    num2 = Number(secondInput); //Store second number after pressing equals button
+    console.log("Second Input:", secondInput);
+    console.log("num 2:", num2);
+    result = operate(operator, num1, num2);
+    console.log("Result:", result);
+    input.innerHTML = result;
+    console.log("/* ----- */ ");
   });
 }
 populateDisplay();
