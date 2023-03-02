@@ -23,13 +23,13 @@ function division(a, b) {
 function operate(operator, a, b) {
   switch (operator) {
     case "/":
-      return (input.innerHTML = division(a, b));
+      return division(a, b);
     case "*":
-      return (input.innerHTML = multiplication(a, b));
+      return multiplication(a, b);
     case "-":
-      return (input.innerHTML = subtraction(a, b));
+      return subtraction(a, b);
     case "+":
-      return (input.innerHTML = addition(a, b));
+      return addition(a, b);
   }
 }
 
