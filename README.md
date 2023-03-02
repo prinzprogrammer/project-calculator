@@ -2,7 +2,8 @@
 
 Simple Calculator
 
-for basic math operators
+also called a 4-function calculator
+it can perform basic arithmetic
 -add
 -subtract
 -multiply
