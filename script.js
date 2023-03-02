@@ -31,6 +31,9 @@ function operate(operator, a, b) {
     case "+":
       return addition(a, b);
   }
+  num1 = 0;
+  num2 = 0;
+  operator = "";
 }
 
 function clear() {
@@ -43,7 +46,7 @@ clearBtn.addEventListener("click", clear);
 
 //You should be storing the ‘display value’ in a variable somewhere for use in the next step
 let num1 = 0;
-let num2Holder = 0;
+let num2Holder;
 let num2 = 0;
 let operator;
 let result = 0;
@@ -66,32 +69,25 @@ function populateDisplay() {
       console.log("operator :", operator);
       //populate the display when you click the number buttons
       input.innerHTML += ` ${operator} `;
-
-      num2Holder = 0;
-
-      for (let index = 0; index < numList.length; index++) {
-        numList[index].addEventListener("click", function () {
-          num2Holder += numList[index].value; //store input.innerHTML into another variable and store numList[index].value
-          console.log("num2 Holder:", num2Holder);
-        });
+      num2Holder = "";
+      if (operator != " ") {
+        for (let index = 0; index < numList.length; index++) {
+          numList[index].addEventListener("click", function () {
+            num2Holder += numList[index].value; //store input.innerHTML into another variable and store numList[index].value
+            console.log("num2 Holder:", num2Holder);
+          });
+        }
       }
     });
   }
+
   equalBtn.addEventListener("click", function () {
-    console.log("num2 Holder:", num2Holder);
+    /* console.log("num2 Holder:", num2Holder); */
     num2 = Number(num2Holder); //Store second number after pressing equals button
     console.log("num 2:", num2);
     result = operate(operator, num1, num2);
     console.log("Result:", result);
     input.innerHTML = result;
-    num1 = 0;
-    num2 = 0;
-    operator;
   });
 }
 populateDisplay();
-
-function storeNum2() {
-  num2Holder += numList[index].value; //store input.innerHTML into another variable and store numList[index].value
-  console.log("num2 Holder:", num2Holder);
-}
