@@ -46,7 +46,7 @@ clearBtn.addEventListener("click", clear);
 
 //You should be storing the ‘display value’ in a variable somewhere for use in the next step
 let num1 = 0;
-let num2Holder;
+let num2Holder = "";
 let num2 = 0;
 let operator;
 let result = 0;
@@ -56,6 +56,7 @@ function populateDisplay() {
     numList[index].addEventListener("click", function () {
       //populate the display when you click the number buttons
       input.innerHTML += numList[index].value;
+      num2Holder += numList[index].value; //grabbing values to pass on to num2
     });
   }
 
@@ -65,25 +66,20 @@ function populateDisplay() {
       num1 = Number(input.innerHTML);
       console.log("num 1:", num1);
 
+      //populate the display when you click the operator buttons
       operator = operatorList[index].value;
       console.log("operator :", operator);
-      //populate the display when you click the number buttons
       input.innerHTML += ` ${operator} `;
-      num2Holder = "";
+
       if (operator != " ") {
-        for (let index = 0; index < numList.length; index++) {
-          numList[index].addEventListener("click", function () {
-            num2Holder += numList[index].value; //store input.innerHTML into another variable and store numList[index].value
-            console.log("num2 Holder:", num2Holder);
-          });
-        }
+        num2Holder = ""; // clear num2Holder to remove the first num values if there is an operator
       }
     });
   }
 
   equalBtn.addEventListener("click", function () {
-    /* console.log("num2 Holder:", num2Holder); */
-    num2 = Number(num2Holder); //Store second number after pressing equals button
+    console.log("num2 Holder:", num2Holder);
+    num2 = Number(num2Holder); //Store num2Holder into second number num2 after pressing equals button
     console.log("num 2:", num2);
     result = operate(operator, num1, num2);
     console.log("Result:", result);
