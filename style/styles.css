@@ -16,6 +16,8 @@ body .calc {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 500px;
+  height: 426px;
   padding-top: 25px;
   padding-left: 15px;
   padding-right: 15px;
@@ -26,7 +28,7 @@ body .calc {
 }
 body .calc .display-holder {
   box-sizing: border-box;
-  width: 500px;
+  width: 100%;
   height: 100px;
   margin-bottom: 15px;
 }
@@ -44,14 +46,19 @@ body .calc .display-holder #screen {
   align-items: center;
 }
 body .calc .row {
-  display: grid;
-  grid-template-columns: repeat(4, 120px);
-  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   box-sizing: border-box;
 }
 body .calc .row button {
   font-size: 1.5rem;
   height: 4rem;
+  width: 23%;
+  margin: 3px;
   background-color: rgb(231, 231, 231);
   border: none;
   border-radius: 3%;
