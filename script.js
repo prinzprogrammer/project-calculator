@@ -36,18 +36,10 @@ function operate(operator, a, b) {
   operator = "";
 }
 
-function clear() {
-  num1 = 0;
-  num2 = 0;
-  operator = "";
-  input.innerHTML = "";
-}
-clearBtn.addEventListener("click", clear);
-
-//You should be storing the ‘display value’ in a variable somewhere for use in the next step
-let num1 = 0;
-let num2Holder = "";
-let num2 = 0;
+//storing the ‘display value’ in a variable
+let num1;
+let num2Holder;
+let num2;
 let operator;
 let result = 0;
 
@@ -55,8 +47,8 @@ function populateDisplay() {
   for (let index = 0; index < numList.length; index++) {
     numList[index].addEventListener("click", function () {
       //populate the display when you click the number buttons
-      input.innerHTML += numList[index].value;
-      num2Holder += numList[index].value; //grabbing values to pass on to num2
+      input.innerHTML += numList[index].textContent;
+      num2Holder += numList[index].textContent; //grabbing values to pass on to num2
     });
   }
 
@@ -65,25 +57,49 @@ function populateDisplay() {
       //store the first number that is input into the calculator when a user presses an operator
       num1 = Number(input.innerHTML);
       console.log("num 1:", num1);
-
       //populate the display when you click the operator buttons
-      operator = operatorList[index].value;
+      operator = operatorList[index].textContent;
       console.log("operator :", operator);
       input.innerHTML += ` ${operator} `;
-
       if (operator != " ") {
         num2Holder = ""; // clear num2Holder to remove the first num values if there is an operator
       }
     });
   }
-
+  //Store num2Holder into second number num2 after pressing equals button
+  //call operator function
   equalBtn.addEventListener("click", function () {
     console.log("num2 Holder:", num2Holder);
-    num2 = Number(num2Holder); //Store num2Holder into second number num2 after pressing equals button
+    num2 = Number(num2Holder);
     console.log("num 2:", num2);
     result = operate(operator, num1, num2);
     console.log("Result:", result);
     input.innerHTML = result;
   });
 }
+
 populateDisplay();
+
+function clear() {
+  num1 = 0;
+  num2 = 0;
+  operator = "";
+  input.innerHTML = "";
+}
+
+clearBtn.addEventListener("click", clear);
+
+/* 
+Users should be able to string together several operations and get the right answer,
+with each pair of numbers being evaluated at a time. For example, 12 + 7 - 5 * 3 = should yield 42.
+*/
+
+//Store all the input into a nested array
+//Use if statement to check if the arrays has more than one operator, if there is more than one...
+//make it work like this...
+//get the result of the first equation (12 + 7 - 5 * 3) => (12 + 7) => 19 => (9 - 5) => 4 => (4 * 3) => 12 => result: 12
+//create a counter variable++ if array contains operators
+
+//I would also Add num2 if i press another operator
+
+//check if array has more than three items and if so solve it by joining the array and running it
