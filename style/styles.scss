@@ -3,80 +3,92 @@
   padding: 0;
 }
 
-.calc {
+body {
   display: flex;
-  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: #313131;
-  .display-holder {
+  background-color: rgb(242, 255, 243);
+  .calc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
     box-sizing: border-box;
-    width: 500px;
-    height: 100px;
-    margin-bottom: 10px;
-    #screen {
-      width: 100%;
-      height: 100%;
-      font-size: 2rem;
-      background-color: rgb(255, 255, 255);
-      border: 1px solid rgb(206, 206, 206);
-      border-radius: 5px;
-      box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.2);
-      padding: 1.8rem;
+    background-color: #313131;
+    .display-holder {
       box-sizing: border-box;
-      text-align: end;
-      align-items: center;
+      width: 500px;
+      height: 100px;
+      margin-bottom: 15px;
+      #screen {
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(206, 206, 206);
+        border-radius: 5px;
+        box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.2);
+        padding: 1.8rem;
+        box-sizing: border-box;
+        text-align: end;
+        align-items: center;
+      }
     }
-  }
-  .row {
-    display: grid;
-    grid-template-columns: repeat(4, 120px);
-    gap: 5px;
-    box-sizing: border-box;
-    button {
-      font-size: 1.5rem;
-      height: 4rem;
-      background-color: rgb(231, 231, 231);
-      border: none;
-      border-radius: 3%;
-      cursor: pointer;
-    }
-    .operator {
-      background-color: rgb(255, 166, 0);
-    }
-    .operator:hover {
-      background-color: rgb(255, 195, 84);
-    }
-    .operator:active {
-      background-color: rgb(255, 166, 0);
-    }
-    .num {
-      background-color: #505050;
-      color: white;
-    }
-    .num:hover {
-      background-color: #929292;
-    }
-    .num:active {
-      background-color: #505050;
-    }
-    #equal,
-    #clear {
-      background-color: #d4d4d2;
-    }
-    #equal:hover {
-      background-color: rgb(248, 248, 248);
-    }
-    #equal:active {
-      background-color: #d4d4d2;
-    }
-    #clear:hover {
-      background-color: rgb(248, 248, 248);
-    }
-    #clear:active {
-      background-color: #d4d4d2;
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 120px);
+      gap: 5px;
+      box-sizing: border-box;
+      button {
+        font-size: 1.5rem;
+        height: 4rem;
+        background-color: rgb(231, 231, 231);
+        border: none;
+        border-radius: 3%;
+        cursor: pointer;
+      }
+      .operator {
+        background-color: rgb(255, 166, 0);
+      }
+      .operator:hover {
+        background-color: rgb(255, 195, 84);
+      }
+      .operator:active {
+        background-color: rgb(255, 166, 0);
+      }
+      .num {
+        background-color: #505050;
+        color: white;
+      }
+      .num:hover {
+        background-color: #929292;
+      }
+      .num:active {
+        background-color: #505050;
+      }
+      #equal,
+      #clear {
+        background-color: #d4d4d2;
+      }
+      #equal:hover {
+        background-color: rgb(248, 248, 248);
+      }
+      #equal:active {
+        background-color: #d4d4d2;
+      }
+      #clear:hover {
+        background-color: rgb(248, 248, 248);
+      }
+      #clear:active {
+        background-color: #d4d4d2;
+      }
     }
   }
 }
